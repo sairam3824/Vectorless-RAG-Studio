@@ -1,5 +1,7 @@
 # Vectorless RAG Studio
 
+> Built with **Google Antigravity** 🚀
+
 A production-style Retrieval-Augmented Generation application that answers questions over uploaded documents without any vector database.
 
 The project uses:
