@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Without Vector DB</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Classical Retrieval RAG</p>
+        <h1>Answer local documents with BM25 + TF-IDF, no vector database required.</h1>
+        <p class="lede">
+          Upload text, markdown, or PDF files, build a local index, and ask grounded
+          questions with source chunk citations.
+        </p>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <h2>1. Upload Documents</h2>
+          <form id="upload-form">
+            <input id="files" name="files" type="file" multiple accept=".txt,.md,.pdf" />
+            <button type="submit">Upload</button>
+          </form>
+          <pre id="upload-output" class="output"></pre>
+        </section>
+
+        <section class="card">
+          <h2>2. Build Index</h2>
+          <button id="index-button">Build / Rebuild Index</button>
+          <pre id="index-output" class="output"></pre>
+        </section>
+
+        <section class="card full">
+          <h2>3. Ask Questions</h2>
+          <form id="query-form">
+            <label>
+              Question
+              <textarea id="question" rows="4" placeholder="What does the document say about deployment steps?" required></textarea>
+            </label>
+            <div class="query-options">
+              <label>
+                Top K
+                <input id="top-k" type="number" min="1" max="10" value="5" />
+              </label>
+              <label>
+                Filename Filter
+                <input id="filename-filter" type="text" placeholder="optional exact filename" />
+              </label>
+              <label>
+                File Type Filter
+                <input id="filetype-filter" type="text" placeholder="txt / md / pdf" />
+              </label>
+            </div>
+            <div class="toggle-row">
+              <label><input id="use-tfidf" type="checkbox" checked /> Use TF-IDF</label>
+              <label><input id="use-reranker" type="checkbox" checked /> Use reranker</label>
+            </div>
+            <button type="submit">Ask</button>
+          </form>
+
+          <div id="query-results" class="results hidden">
+            <div class="result-panel">
+              <h3>Final Answer</h3>
+              <div id="answer" class="answer"></div>
+            </div>
+            <div class="result-panel">
+              <h3>Citations</h3>
+              <ul id="citations"></ul>
+            </div>
+            <div class="result-panel">
+              <h3>Retrieved Chunks</h3>
+              <div id="chunks"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
