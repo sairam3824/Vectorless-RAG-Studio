@@ -1,0 +1,5 @@
+The analytics module exports CSV reports every morning at 06:00 UTC.
+
+Single sign-on support is available on the enterprise plan only.
+
+Disaster recovery snapshots are retained for 30 days in the primary environment.
