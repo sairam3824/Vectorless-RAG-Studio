@@ -1,0 +1,17 @@
+.DS_Store
+.pytest_cache/
+__pycache__/
+*.pyc
+
+backend/.env
+backend/.venv/
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+backend/data/index/*.pkl
+backend/data/index/*.json
+!backend/data/index/.gitkeep
+backend/data/rag.sqlite3
+
+frontend/.env.local
+frontend/.next/
+frontend/node_modules/
