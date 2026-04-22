@@ -1,7 +1,5 @@
 # Vectorless RAG Studio
 
-> Built with **Google Antigravity** 🚀
-
 A production-style Retrieval-Augmented Generation application that answers questions over uploaded documents without any vector database.
 
 The project uses:
@@ -220,6 +218,8 @@ The included tests cover:
 
 ## Notes
 
-- If `OPENAI_API_KEY` is not configured, the backend still returns retrieved evidence and an extractive fallback answer.
-- Uploading or deleting a document invalidates the existing retrieval artifacts so the UI can prompt for re-indexing.
 - The right-side evidence panel in the frontend includes a debug accordion showing the final context sent to the model.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
