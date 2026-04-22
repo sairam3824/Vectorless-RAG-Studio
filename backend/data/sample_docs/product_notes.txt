@@ -1,0 +1,13 @@
+Platform Notes
+
+Indexing Pipeline
+The indexing pipeline creates page records, section records, and hybrid lexical scoring artifacts without any vector database.
+Title matches and keyword overlap are fused with BM25 and TF-IDF scores to rank evidence.
+
+Enterprise Access
+Single sign-on support is available on the enterprise plan only.
+Audit export automation can be enabled for enterprise workspaces during onboarding.
+
+Analytics Exports
+The analytics module exports CSV reports every morning at 06:00 UTC.
+Disaster recovery snapshots are retained for 30 days in the primary environment.
